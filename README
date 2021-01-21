@@ -102,24 +102,24 @@ To run and test it:
 デフォルトメッセージがある☆
 'default.' を削除すればアクティブになる☆
 
---------------------------------------------
--- SETTING UP ALTERNATE LOCATIONS.
---------------------------------------------
+## (^q^) 代りの場所を設定するなら☆
 
-On startup, nngssrv will try to read it's config from nngs.cnf in
-the current directory (or specfied with -c pathname)
-The config file mechanism enables you to change file locations and
-other things without recompiling. You can also use separate locations 
-for data and the nngssrv binary. Or put the logfile in /var/.
-(but I would advise you *not* to make too wild choices ;-)
+(^q^) 起動時に、 nngssrv は カレント・ディレクトリにある nngs.cnf ファイルから
+設定を読み込もうとする☆
+または `-c pathname` で指定しろ☆
+(^q^) 再コンパイル不要、起動するだけでいい☆　ということかだぜ☆（＾～＾）
 
-The easiest way to set things up is:
-1) do a configure&compile&and install of nngs
-2) start the binary, and kill it.
-3) edit the nngs.cnf, which will have been written in the current directory.
-   The config file contains enough comment to be self-explanatory.
-4) Future versions will probably add more items to the conffile.
-   Please inspect the nngs.cnf (or written.cnf) for possible additions.
+(^q^) データと nngssrv バイナリを別の場所に置くことができる☆
+または、 ログファイルを `/var/` の中に置くことができる☆
+しかし ワイルドな選択をしないことをおススメする ;-)
+
+最も簡単な設定方法:  
+
+1. NNGS を設定し、コンパイルし、インストールする☆
+2. バイナリを開始。そしてそれを強制終了☆
+3. 現在のディレクトリに書き出された nngs.cnf を編集☆ 設定ファイルには 一目瞭然のコメントが書いてある☆
+4. 将来のバージョンでは おそらくさらに設定ファイルに項目が追加されるでしょう☆  
+   可能な追加については、 nngs.cnf または written.cnf を調べてください☆
 
 --------------------------------------------
 -- RUNNING NNGS FROM INSIDE A CHROOT() 'JAIL'
