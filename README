@@ -75,6 +75,8 @@ tarball を解凍しろ、mlrate ディレクトリーへシンボリック・�
 data (players,games,logfile) ファイルもその下に入れる☆  
 サーバーの実行によって それらのファイルはでかくなるから定期的にチェックしろよ☆  
 
+--prefix には絶対パスを指定するのかだぜ☆（＾～＾）？
+
 To run and test it:  
 
 ```shell
