@@ -5,46 +5,39 @@ Git hub のフォークの使い方が分からん☆（＾～＾）どうなっ
 
 
 -------------------------------------------------------------------
--- NNGS SERVER README
+-- NNGS SERVER の README を読もうぜ☆（＾～＾）
 -------------------------------------------------------------------
 
-The files contained in this tarball comprise the No Name Go Server
-(NNGS) source code.
+(^q^) Linuxの圧縮形式の tarball に含まれているこのファイルは  
+No Name Go Server(NNGS)のソースコードです。  
 
-For licencing information, see the file COPYING.
+ライセンスは COPYING ファイルを見て。
 
 
->> CONFIGURATION-METHOD HAS CHANGED!
+(^q^) 設定ファイルの構成が変ったらしいが、初めてみるわたしには関係ないしな☆
 
-Most of the configuration items for the NNGS server are now
-kept in a single nngs.cnf -file.
-Running ./configure basically just establishes some defaults.
+設定は 単一の nngs.cnf ファイルにまとめました。
+`./configure` コマンドを実行すると ほとんど構成終わり☆（＾～＾）
 
-This will allow you to reconfigure things without recompiling, and
-recompiling/installing without changing your configuration.
+(^q^) そのコマンドで 既存の設定ファイルへの移行をやってくれたらしい☆
+わたしには関係ないな☆（＾～＾）
 
-Some of the configuration items have to do with files and the directory
-where they are expected to be. Pointing to wrong or nonexistant files will
-of course produce bizar results. Feel free to shoot yourself in the foot.
+(^q^) その設定には、ファイルとディレクトリーに関する項目がある。それらがおかしいと、おかしくなる☆
 
-At startup, if the configfile is not found, nngssrv will *create* it, with
-the current (compiled in) default values in it.  Edit and enjoy...
+(^q^) 起動時に 設定ファイルがなければ、デフォルトのを勝手に作る。
 
-After processing the configfile, nngssrv will write the file 'written.cnf'
-into the current directory. You can use this file to verify the values that
-the program actually uses. The format is the same as the conffile.
+(1) 前述のように設定ファイルを処理する☆（＾～＾）
+(2) そのあと nngssrv は カレント・ディレクトリに 'written.cnf' を書き出す。
+フォーマットは 設定ファイルと同じ。この内容がプログラムで実際に使われている設定☆（＾～＾）
 
 --------------------------------------
--- CONFIGURATION COMPILATION AND INSTALLATION.
+-- インストールについて
 --------------------------------------
 
-NNGS needs mlrate, even if you don't use it.
-Unfortunately, the original (pem's) mlrate
-is not autoconfd/automaked. If you can't get your hands on an
-AC/AM's copy, you will need to move all of it's
-source into a src/ subdirectory, and you may need some
-minor changes. Sorry!
+(^q^) NNGS は、使っていなくても mlrate が必要です☆（＾～＾） なんてこった☆（＾～＾）
+残念なことにオリジナルの（pemの）mlrate は autoconfd/automaked (AC/AM) ではありません☆ 何それ☆（＾～＾）
 
+(^q^) あなたが AC/AM を手に入れられなかったなら、手動で `src/` ディレクトリーの下にそれらを移動してください☆（＾～＾）
 
 Step 1:
 
