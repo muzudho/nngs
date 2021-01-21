@@ -82,38 +82,11 @@ To run and test it:
 # telnet localhost 9696
 ```
 
---------------------------------------------
--- STEPS FOR EXISTING INSTALLATIONS
---------------------------------------------
+## (^q^) NNGSの古いバージョンをお持ちの方へ☆
 
-If you already have (an older version of) NNGS:
-* the steps for installing the new version are _basically the same_
-  as for a first install.
+いないだろこの章飛ばせだぜ☆（＾～＾）
 
-* Just make sure you use the same --prefix=/whatever/dir/you/want
-  flag for the configuration as you did on the first installation.
-
-* The installation will *not* overwrite existing files.
-  (except for the nngssrv - binary, of course) .
-
-* A new version of the server *may* introduce new items in the conffile.
-  To track these:
-  1) put (a copy of) your conffile in a safe place (or rename it)
-  2) compile the new NNGS
-  3) shutdown the (old) server
-  4) install the new NNGS
-  5) start the new NNGS from a (current) directory, where *no*
-     nngs.cnf file is present.
-     (this will cause NNGS to *create* a nngs.cnf -file)
-  6) Check the differences between the old<-->new configfile.
-  7) edit your configfile.
-     (probably just the old one, with only a few lines inserted/added)
-  8) of course, you'll have to stop and restart NNGS to put
-     the changes in effect. (NNGS does *not* understand SIGHUP)
-  9) check the 'written.cnf' file again, to see the config that the
-     server actually uses ;-)
- 10) If the new server complains that it cannot find the player-files,
-     it probably expects them somewhere else: check the pathnames!
+(^q^) --prefix は古いバージョンを持ってるやつへの対策だったようだな☆
 
 --------------------------------------------
 -- DATA FILES
