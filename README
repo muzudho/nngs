@@ -3,6 +3,8 @@
 勉強しようぜ☆（＾～＾）  
 Git hub のフォークの使い方が分からん☆（＾～＾）どうなってるんだぜ☆（＾～＾）？  
 
+* [NNGS1.1.22のDocker化](https://github.com/muzudho/nngs-docker)
+* ここは、勉強のレポジトリ☆（＾～＾）
 
 ## NNGS SERVER の README を読もうぜ☆（＾～＾）
 
@@ -94,6 +96,7 @@ To run and test it:
 
 (^q^) データとログファイルは $prefix/share/nngssrv/* にある☆  
 設定ファイルで設定しろ☆  
+`$prefix/share/nngssrv/*` に入れるやつと、 `$prefix/nngssrv/*` に入れるやつがあって ややこしいぜ☆（＾～＾）  
 
 (^q^) 損傷を避けるために、いくつかのファイルは自動ではインストールしない。  
 手動でインストールしろ☆  
