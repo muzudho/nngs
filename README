@@ -4,78 +4,83 @@
 Git hub のフォークの使い方が分からん☆（＾～＾）どうなってるんだぜ☆（＾～＾）？  
 
 
--------------------------------------------------------------------
--- NNGS SERVER の README を読もうぜ☆（＾～＾）
--------------------------------------------------------------------
+## NNGS SERVER の README を読もうぜ☆（＾～＾）
 
 (^q^) Linuxの圧縮形式の tarball に含まれているこのファイルは  
 No Name Go Server(NNGS)のソースコードです。  
 
-ライセンスは COPYING ファイルを見て。
+ライセンスは COPYING ファイルを見て。  
 
 
-(^q^) 設定ファイルの構成が変ったらしいが、初めてみるわたしには関係ないしな☆
+## 設定ファイルが変った☆（＾～＾）
 
-設定は 単一の nngs.cnf ファイルにまとめました。
-`./configure` コマンドを実行すると ほとんど構成終わり☆（＾～＾）
+(^q^) 設定ファイルの構成が変ったらしいが、初めてみるわたしには関係ないしな☆  
 
-(^q^) そのコマンドで 既存の設定ファイルへの移行をやってくれたらしい☆
-わたしには関係ないな☆（＾～＾）
+(^q^) 設定は 単一の nngs.cnf ファイルにまとめました。  
+`./configure` コマンドを実行すると ほとんど構成終わり☆  
 
-(^q^) その設定には、ファイルとディレクトリーに関する項目がある。それらがおかしいと、おかしくなる☆
+(^q^) そのコマンドで 既存の設定ファイルへの移行をやってくれたらしい☆  
+わたしには関係ないな☆（＾～＾）  
 
-(^q^) 起動時に 設定ファイルがなければ、デフォルトのを勝手に作る。
+(^q^) その設定には、ファイルとディレクトリーに関する項目がある。それらがおかしいと、おかしくなる☆  
 
-(1) 前述のように設定ファイルを処理する☆（＾～＾）
-(2) そのあと nngssrv は カレント・ディレクトリに 'written.cnf' を書き出す。
-フォーマットは 設定ファイルと同じ。この内容がプログラムで実際に使われている設定☆（＾～＾）
+(^q^) 起動時に 設定ファイルがなければ、デフォルトのを勝手に作る。  
 
---------------------------------------
--- インストールについて
---------------------------------------
+(^q^)
+(1) 前述のように設定ファイルを処理する☆  
+(2) そのあと nngssrv は カレント・ディレクトリに 'written.cnf' を書き出す。  
+フォーマットは 設定ファイルと同じ。この内容がプログラムで実際に使われている設定☆  
 
-(^q^) NNGS は、使っていなくても mlrate が必要です☆（＾～＾） なんてこった☆（＾～＾）
-残念なことにオリジナルの（pemの）mlrate は autoconfd/automaked (AC/AM) ではありません☆ 何それ☆（＾～＾）
+## インストールについて☆（＾～＾）
 
-(^q^) あなたが AC/AM を手に入れられなかったなら、手動で `src/` ディレクトリーの下にそれらを移動してください☆（＾～＾）
+(^q^) NNGS は、使っていなくても mlrate が必要です☆ なんてこった☆（＾～＾）  
+残念なことにオリジナルの（pemの）mlrate は autoconfd/automaked (AC/AM) ではありません☆ 何それ☆（＾～＾）  
 
-Step 1:
+(^q^) あなたが AC/AM を手に入れられなかったなら、手動で `src/` ディレクトリーの下にそれらを移動してください☆（＾～＾）  
 
-Configure and compile mlrate *before* NNGS.  Here's how:
-(current version numbers may be different...)
+Step 1:  
 
+(^q^) NNGS を設定する前に mlrate の構成とコンパイルをしろ☆  
+次のようにしろ（バージョン番号は異なることがある）  
+
+```shell
 # tar xvzf mlrate-1.0.xx.tar.gz
 # cd mlrate-1.0.xx
 # ./configure
 # make
 # cd ..
+```
 
-_READ_ the README file in the mlrate directory.  It contains much useful
-information on how to set up the ratings system to work properly.
+(^q^) mlrate ディレクトリーの README ファイルを読め☆  
+レーティング・システムを働かせる有用な情報がある☆  
 
-step 2: 
-unpack tarball and create a symlink to the mlrate directory.
+step 2:  
 
+tarball を解凍しろ、mlrate ディレクトリーへシンボリック・リンクを貼れ、  
+
+```shell
 # tar xvzf nngs-1.1.yy.tar.gz
 # cd nngs-1.1.yy
 # ln -s ../mlrate-1.0.xx mlrate
 # ./configure --prefix=/whatever/dir/you/want/to/install/it/in/
 # make
 # make install
+```
 
-The 'make install' command installs the server and all basic
-help files necessary for its functionality.
-All files needed by the server are installed under the --prefix.
-The "/whatever/dir/you/want/to/install/it/in/" -directory must 
-of course be writeable by (the user that runs) the NNGS binary.
-Once running, the server will put all of it's data (players,games,logfile)
-under this prefix, too.
-Some of these files may grow over time, as the server runs. You might need to
-periodically check and prune these directories.
+(^q^)'make install' コマンドは サーバーの機能を働かせるために必要なすべての基本的なヘルプファイルを
+インストールするぜ☆ しなかったと思うけどなあ☆（＾～＾）
+
+(^q^)サーバーに必要なすべてのファイルは、 --prefix の下にインストールされる☆
+そのディレクトリーは NNGSバイナリが書込み可能にしろ☆
+data (players,games,logfile) ファイルもその下に入れる。
+サーバーの実行によって それらのファイルはでかくなるから定期的にチェックしろよ☆
 
 To run and test it:
+
+```shell
 # $prefix/bin/nngssrv &
 # telnet localhost 9696
+```
 
 --------------------------------------------
 -- STEPS FOR EXISTING INSTALLATIONS
