@@ -67,15 +67,15 @@ tarball を解凍しろ、mlrate ディレクトリーへシンボリック・�
 # make install
 ```
 
-(^q^)'make install' コマンドは サーバーの機能を働かせるために必要なすべての基本的なヘルプファイルを
-インストールするぜ☆ しなかったと思うけどなあ☆（＾～＾）
+(^q^)'make install' コマンドは サーバーの機能を働かせるために必要なすべての基本的なヘルプファイルを  
+インストールするぜ☆ しなかったと思うけどなあ☆（＾～＾）  
 
-(^q^)サーバーに必要なすべてのファイルは、 --prefix の下にインストールされる☆
-そのディレクトリーは NNGSバイナリが書込み可能にしろ☆
-data (players,games,logfile) ファイルもその下に入れる。
-サーバーの実行によって それらのファイルはでかくなるから定期的にチェックしろよ☆
+(^q^)サーバーに必要なすべてのファイルは、 --prefix の下にインストールされる☆  
+そのディレクトリーは NNGSバイナリが書込み可能にしろ☆  
+data (players,games,logfile) ファイルもその下に入れる☆  
+サーバーの実行によって それらのファイルはでかくなるから定期的にチェックしろよ☆  
 
-To run and test it:
+To run and test it:  
 
 ```shell
 # $prefix/bin/nngssrv &
@@ -84,34 +84,34 @@ To run and test it:
 
 ## (^q^) NNGSの古いバージョンをお持ちの方へ☆
 
-いないだろこの章飛ばせだぜ☆（＾～＾）
+いないだろこの章飛ばせだぜ☆（＾～＾）  
 
-(^q^) --prefix は古いバージョンを持ってるやつへの対策だったようだな☆
+(^q^) --prefix は古いバージョンを持ってるやつへの対策だったようだな☆  
 
 ## データ ファイル
 
-(^q^) データとログファイルは $prefix/share/nngssrv/* にある☆
-設定ファイルで設定しろ☆
+(^q^) データとログファイルは $prefix/share/nngssrv/* にある☆  
+設定ファイルで設定しろ☆  
 
-(^q^) 損傷を避けるために、いくつかのファイルは自動ではインストールしない。
-手動でインストールしろ☆
-`$prefix/nngssrv/ladder` には２つの ladder ファイルの例がある☆
-末尾の '.example' を削除するとか☆
+(^q^) 損傷を避けるために、いくつかのファイルは自動ではインストールしない。  
+手動でインストールしろ☆  
+`$prefix/nngssrv/ladder` には２つの ladder ファイルの例がある☆  
+末尾の '.example' を削除するとか☆  
 
-(^q^) `$prefix/nngssrv/messages` には ログイン、ログアウトなどの
-デフォルトメッセージがある☆
-'default.' を削除すればアクティブになる☆
+(^q^) `$prefix/nngssrv/messages` には ログイン、ログアウトなどの  
+デフォルトメッセージがある☆  
+'default.' を削除すればアクティブになる☆  
 
 ## (^q^) 代りの場所を設定するなら☆
 
-(^q^) 起動時に、 nngssrv は カレント・ディレクトリにある nngs.cnf ファイルから
-設定を読み込もうとする☆
-または `-c pathname` で指定しろ☆
-(^q^) 再コンパイル不要、起動するだけでいい☆　ということかだぜ☆（＾～＾）
+(^q^) 起動時に、 nngssrv は カレント・ディレクトリにある nngs.cnf ファイルから  
+設定を読み込もうとする☆  
+または `-c pathname` で指定しろ☆  
+(^q^) 再コンパイル不要、起動するだけでいい☆　ということかだぜ☆（＾～＾）  
 
-(^q^) データと nngssrv バイナリを別の場所に置くことができる☆
-または、 ログファイルを `/var/` の中に置くことができる☆
-しかし ワイルドな選択をしないことをおススメする ;-)
+(^q^) データと nngssrv バイナリを別の場所に置くことができる☆  
+または、 ログファイルを `/var/` の中に置くことができる☆  
+しかし ワイルドな選択をしないことをおススメする ;-)  
 
 最も簡単な設定方法:  
 
@@ -125,41 +125,32 @@ To run and test it:
 
 消した☆（＾～＾）  
 
----------------------------------------------------
--- USERS AND ADMINS
----------------------------------------------------
+## ユーザーと管理者
 
-In nngs-1.1.22, an admin-account is automatically added 
-if it is not found at server startup.
-**********************************************
-** this admin-account has NO PASSWORDr      **
-** you'll have to SET A PASSWORD IMMEDIATELY**
-**********************************************
+(^q^) サーバー起動時に管理者アカウントがなければ勝手に追加される☆  
+**パスワードは設定されていないので、すぐに設定しろだぜ☆**  
 
-(in older versions: When you install NNGS for the first time, you'll need to manually
-create a user with 'admin' - rights. This can be ANY valid name.
-Once there is an admin-account, it can be used to grant admin-rights
-to other users.)
+NOTE: admin-status は２箇所に保存される☆: 適切な userfile と、 lists/admin ファイル。 両方必要。  
+NOTE2: NNGSサーバーの実行中は ほとんどのファイルをメモリ上にキャッシュして使っているので  
+元のファイルを編集しても反映されない。安全のために、サーバーを止めてからファイルを編集しろ☆  
 
-NOTE: the admin-status is stored in TWO places: the userfile proper,
-and a lists/admin - file. You'l need both.
-NOTE2: a running NNGS-server may have most of it's files cached.
-editing the underlying files may not have the desired effects.
-To be safe: stop the server before editing the files.
+admin ユーザーは lists/admins.default ファイルに既にあります。  
+次のことを行う必要があります。  
+1. `register` コマンドを使ってログインして 'admin' という名前のユーザーを作成しろ、そしてログアウトしろ☆
+2. (a) サーバー止めろ☆  
+(b) 手動で `.../players/a/admin` の中にある 'admin' ユーザーファイルを編集しろ☆
 
-There already is a user 'admin' in the lists/admins.default -file
-; you'll need to:
-1) create a user named 'admin' by logging in and using
-   the 'register' -command, and logging out.
-2a) stop the server
-2b) manually edit the user file for 'admin' in .../players/a/admin:
-   change the line:
+change the line:  
+
+```plain
 VARS: 1:4:0:1:0:1:1:0 :0:1:1:0:1:1:0:0 :0:0:0:0:0:0:0:0 :0:4:1:3:90:19:10:25 :33:0:0:33
    to:
 VARS: 1:4:0:1:0:1:1:0 :0:1:1:0:1:1:0:0 :0:100:0:0:0:0:0:0 :0:4:1:3:90:19:10:25 :33:0:0:33
    (this field is the adminLevel)---------^^^
-3a) restart the server
-3b) on the next logon, the 'admin' account will have unlimited rights.
+```
+
+3. (a) サーバーを再起動しろ☆  
+(b) 次回のログオンから、 'admin' アカウントには無制限の権限がある☆
 
 -----------------------------------------------------
 -- DEVELOPMENT
