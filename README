@@ -88,25 +88,19 @@ To run and test it:
 
 (^q^) --prefix は古いバージョンを持ってるやつへの対策だったようだな☆
 
---------------------------------------------
--- DATA FILES
---------------------------------------------
+## データ ファイル
 
-Data and logfiles live in $prefix/share/nngssrv/*
+(^q^) データとログファイルは $prefix/share/nngssrv/* にある☆
+設定ファイルで設定しろ☆
 
-You can change these locations, but you'll have to reflect the change
-in your conffile. See below under alternate locations.
+(^q^) 損傷を避けるために、いくつかのファイルは自動ではインストールしない。
+手動でインストールしろ☆
+`$prefix/nngssrv/ladder` には２つの ladder ファイルの例がある☆
+末尾の '.example' を削除するとか☆
 
-To avoid damage to customised data, some files are not installed automatically
-by the 'make install'.
-You'll need to install them manually.
-
-In $prefix/nngssrv/ladder you will find two example ladder
-files.  Copy them (or remame them) to remove the '.example'
-
-In $prefix/nngssrv/messages you will find default message
-files for login, logout, etc.  Rename them to remove the 'default.'
-part to activate them.
+(^q^) `$prefix/nngssrv/messages` には ログイン、ログアウトなどの
+デフォルトメッセージがある☆
+'default.' を削除すればアクティブになる☆
 
 --------------------------------------------
 -- SETTING UP ALTERNATE LOCATIONS.
