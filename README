@@ -152,49 +152,40 @@ VARS: 1:4:0:1:0:1:1:0 :0:1:1:0:1:1:0:0 :0:100:0:0:0:0:0:0 :0:4:1:3:90:19:10:25 :
 3. (a) サーバーを再起動しろ☆  
 (b) 次回のログオンから、 'admin' アカウントには無制限の権限がある☆
 
------------------------------------------------------
--- DEVELOPMENT
------------------------------------------------------
+## 開発
 
-The server code is undergoing development and contributions are
-welcome.  See:
+メンテナンスされてんのかなあ☆（＾～＾）  
 
-<http://www.sourceforge.org/nngs>
+See:  
 
-for the latest status and sources.
-Contributions and suggestions are welcome.
+[<http://www.sourceforge.org/nngs>](http://www.sourceforge.org/nngs)  
 
-When sending patches that span several files, please use
-diff -ruN <orig-dir> <modified-dir>
+## 主な変更
 
+* autoconf と automake で、多くの環境でコンパイルできる
+* ソース・ツリーが綺麗
+  * all help files
+  * admin files etc.
+  * included a 'make install' will install a working server
+  * すべてのデータのディレクトリーを１箇所にまとめた☆ ($prefix/nngssrv)
+  * インストール時にすべてのゲームとプレイヤーのディレクトリーを作った☆
+  * 動的メモリ管理の local malloc() と salloc() は消した☆
+* mlrate が綺麗になった☆
+* ほとんどのコードから、フォーマット文字列は取り出した☆
+* 国際化☆
+  * chinese (messages and help files) (courtesy of LGS)
+  * german (messages only)
+  * ... others to follow
+* いくつかのキャッシュを追加した☆ playerdb へ（から）の読み書きを減らすために☆
+* ゲームの時計の解像度を 0.1秒に変えた☆
+- 設定を .cnf ファイルへ移動した☆
+- コンパイルされたファイル名をほとんど削除した☆　何のことやら☆（＾～＾）
+- chroot() をサポートした☆
+- 実験的な UDP ポート、 PHP/web インターフェースで使われる☆
 
->> MAJOR CHANGES
+### WINDOWS
 
-Major changes since the beginning of this project:
-- autoconf and automake so it compiles easily on many platforms, even windoze
-- clean source tree
-... all help files, admin files etc. included
-... a 'make install' will install a working server
-... all data dirs organized into one place ($prefix/nngssrv)
-... all game and player dirs created on install
-- nngs local malloc() and salloc() removed
-- mlrate cleaned up
-- (most) format strings taken out of the code
-- internationalization
-... chinese (messages and help files) (courtesy of LGS)
-... german (messages only)
-... others to follow
-- added some caching, to reduce reading/writing of playerdb to/from disk.
-- changed clock resolution for games to 0.1 sec.
-- moved configuration into .cnf file.
-- removed (most of) the compiled-in filenames.
-- added chroot() support.
-- experimental UDP port, to be used by a PHP/web interface.
-
->> WINDOWS
-
-The server now works on windows as well!  Here's how:
-- Get and install cygwin (>=1.1.8) from http://www.cygwin.com
-- follow the instructions above to compile and install as on unix
-- NOTE: windows-build has not been tried since 2002. YMMV.
-
+サーバーは Windows でも動くようになった☆  
+* cygwin (>=1.1.8) を http://www.cygwin.com からインストールして取ってこい☆
+* 上記の手順の通りにコンパイルとインストールしろ☆
+* 注: Windowsビルドは 2002年以降試されていません☆ YMMV.
